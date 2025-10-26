@@ -203,6 +203,7 @@
 
 ## Project 3: Faculty Management - Microservices with One-To-Many Relationship
  ### Project Overview
+ 
   Objective: Implement two microservices for managing faculties and students with one-to-many relationship and inter-service communication
 
   Architecture: Two independent Spring Boot applications with separate MySQL databases
@@ -210,7 +211,9 @@
   Technology Stack: Spring Boot 3.5.7, Java 21, MySQL, Spring Data JPA, RestTemplate, Lombok, Swagger
 
 #### Microservice 1: FiliereService
+
   ##### Project Structure & Implementation
+  
    1. Package: entities
       Class: Filiere.java
   
