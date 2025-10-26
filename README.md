@@ -2,8 +2,10 @@
 
 ## Project 1: SomeService - Simple Calculator API
 ### Project Overview
-  #### Objective: Develop a simple RESTful API that allows users to submit two numbers and receive their sum
-   #### Technology Stack: Spring Boot 3.5.7, Java 21, Maven, Lombok, Spring Web, Swagger
+
+  Objective: Develop a simple RESTful API that allows users to submit two numbers and receive their sum
+  
+  Technology Stack: Spring Boot 3.5.7, Java 21, Maven, Lombok, Spring Web, Swagger
 ### 1. Project Creation
    #### Created Spring Boot project using Spring Initializr
    #### Included dependencies: Spring Web, Spring Data JPA, Lombok, SpringDoc OpenAPI
