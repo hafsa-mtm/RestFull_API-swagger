@@ -55,7 +55,7 @@
   Objective: Develop a microservice for bank account management with CRUD operations, credit, and debit functionality
 
   Technology Stack: Spring Boot 3.5.7, Java 21, MySQL, Spring Data JPA, Lombok, Swagger
-Project Structure & Implementation
+   Project Structure & Implementation
 
 ### 1. Project Creation
   Created Spring Boot project using Spring Initializr
@@ -211,141 +211,141 @@ Project Structure & Implementation
 
 #### Microservice 1: FiliereService
   ##### Project Structure & Implementation
- 1. Package: entities
-  Class: Filiere.java
-
-  Fields: idFiliere, code, libelle
-
-  Annotations: JPA @Entity, @Id for database mapping
+   1. Package: entities
+      Class: Filiere.java
   
-2. Package: repository
-Interface: FiliereRepository.java
+      Fields: idFiliere, code, libelle
 
-Features: Extends JpaRepository for automatic CRUD operations
+      Annotations: JPA @Entity, @Id for database mapping
+  
+  2. Package: repository
+      Interface: FiliereRepository.java
 
-3. Package: service
-Class: FiliereService.java
+      Features: Extends JpaRepository for automatic CRUD operations
 
-Methods: save(), findAll(), update(), deleteById()
+  3. Package: service
+      Class: FiliereService.java
 
-Functionality: Business logic and data persistence
+      Methods: save(), findAll(), update(), deleteById()
 
-4. Package: controller
-Class: FiliereController.java
+      Functionality: Business logic and data persistence
 
-##### Annotations: REST endpoints with Swagger documentation
+  4. Package: controller
+      Class: FiliereController.java
 
-1.FiliereService API Endpoints
+#### Annotations: REST endpoints with Swagger documentation
 
-GET /api/v1/filieres
+  ##### FiliereService API Endpoints
 
-Description: Get all academic programs
+  1.GET /api/v1/filieres
 
-Response: List of all filieres with details
+   Description: Get all academic programs
 
-2.GET /api/v1/filieres/{id}
+   Response: List of all filieres with details
 
-Description: Get specific filiere by ID
+  2.GET /api/v1/filieres/{id}
 
-Parameters: Filiere ID as path variable
+   Description: Get specific filiere by ID
 
-Response: Filiere details (idFiliere, code, libelle)
+   Parameters: Filiere ID as path variable
 
-3.POST /api/v1/filieres
+   Response: Filiere details (idFiliere, code, libelle)
 
-Description: Create a new academic program
+  3.POST /api/v1/filieres
 
-Request Body: JSON with code and libelle
+   Description: Create a new academic program
 
-Response: Created filiere details with generated ID
+   Request Body: JSON with code and libelle
 
-4.PUT /api/v1/filieres/{id}
+   Response: Created filiere details with generated ID
 
-Description: Update an existing filiere
+  4.PUT /api/v1/filieres/{id}
 
-Parameters: Filiere ID as path variable
+   Description: Update an existing filiere
 
-Request Body: JSON with updated code and libelle
+   Parameters: Filiere ID as path variable
 
-Response: Updated filiere details
+   Request Body: JSON with updated code and libelle
 
-5.DELETE /api/v1/filieres/{id}
+   Response: Updated filiere details
 
-Description: Delete an academic program
+ 5.DELETE /api/v1/filieres/{id}
 
-Parameters: Filiere ID as path variable
+   Description: Delete an academic program
 
-Response: Success confirmation
+   Parameters: Filiere ID as path variable
+
+   Response: Success confirmation
 
 #### Microservice 2: EtudiantService
- ##### Project Structure & Implementation
+ #### Project Structure & Implementation
  
   1. Package: entities
      
-  Class: Etudiant.java
+   Class: Etudiant.java
 
-  Fields: idEtudiant, nom, prenom, cne, filiereId
+   Fields: idEtudiant, nom, prenom, cne, filiereId
 
-  Annotations: JPA @Entity, @Id with relationship mapping
+   Annotations: JPA @Entity, @Id with relationship mapping
 
 2. Package: repository
-Interface: EtudiantRepository.java
+  Interface: EtudiantRepository.java
 
-Features: Extends JpaRepository for automatic CRUD operations
+  Features: Extends JpaRepository for automatic CRUD operations
 
 3. Package: service
-Class: EtudiantService.java
+   Class: EtudiantService.java
 
-Functionality: Business logic for student management
+   Functionality: Business logic for student management
 
 4. Package: config
-Class: RestConfig.java
+   Class: RestConfig.java
 
-Bean: RestTemplate for HTTP communication between microservices
+   Bean: RestTemplate for HTTP communication between microservices
 
 5. Package: controller
-Class: EtudiantController.java
+   Class: EtudiantController.java
 
-Features: REST endpoints with inter-service communication
+   Features: REST endpoints with inter-service communication
 
 ##### EtudiantService API Endpoints
-1.GET /api/v1/etudiants
+  1.GET /api/v1/etudiants
 
-Description: Get all students
+   Description: Get all students
 
-Response: List of all students with details
+   Response: List of all students with details
 
-2.GET /api/v1/etudiants/{id}
+  2.GET /api/v1/etudiants/{id}
 
-Description: Get specific student by ID
+   Description: Get specific student by ID
 
-Parameters: Student ID as path variable
+   Parameters: Student ID as path variable
 
-Response: Student details with filiere information
+   Response: Student details with filiere information
 
-3.POST /api/v1/etudiants
+  3.POST /api/v1/etudiants
 
-Description: Create a new student
+   Description: Create a new student
 
-Request Body: JSON with nom, prenom, cne, filiereId
+  Request Body: JSON with nom, prenom, cne, filiereId
 
-Response: Created student details with generated ID
+  Response: Created student details with generated ID
 
-4.PUT /api/v1/etudiants
+ 4.PUT /api/v1/etudiants
 
-Description: Update an existing student
+  Description: Update an existing student
 
-Request Body: JSON with updated student information
+  Request Body: JSON with updated student information
 
-Response: Updated student details
+  Response: Updated student details
 
 5.DELETE /api/v1/etudiants/{id}
 
-Description: Delete a student
+  Description: Delete a student
+ 
+  Parameters: Student ID as path variable
 
-Parameters: Student ID as path variable
-
-Response: Success confirmation
+  Response: Success confirmation
 
 ##### Testing with Postman
 
@@ -426,8 +426,6 @@ FiliereService: http://localhost:8081/swagger-ui.html
 5.post
 
 <img width="945" height="437" alt="image" src="https://github.com/user-attachments/assets/31ecbef8-c4b8-4e1d-be83-ed8d4b53a2f3" />
-
-<img width="945" height="331" alt="image" src="https://github.com/user-attachments/assets/5642a355-a76d-44f0-9827-c7bb4b2d0b04" />
 
 6.delete 
 
