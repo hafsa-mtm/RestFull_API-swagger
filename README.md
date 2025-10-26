@@ -2,25 +2,25 @@
 
 ## Project 1: SomeService - Simple Calculator API
 ### Project Overview
-   Objective: Develop a simple RESTful API that allows users to submit two numbers and receive their sum
-   Technology Stack: Spring Boot 3.5.7, Java 21, Maven, Lombok, Spring Web, Swagger
+  #### Objective: Develop a simple RESTful API that allows users to submit two numbers and receive their sum
+   #### Technology Stack: Spring Boot 3.5.7, Java 21, Maven, Lombok, Spring Web, Swagger
 ### 1. Project Creation
-   Created Spring Boot project using Spring Initializr
-   Included dependencies: Spring Web, Spring Data JPA, Lombok, SpringDoc OpenAPI
+   #### Created Spring Boot project using Spring Initializr
+   #### Included dependencies: Spring Web, Spring Data JPA, Lombok, SpringDoc OpenAPI
 ### 2. Package: entities
-   Class: Nombres.java
-   Purpose: Data model containing two variables a and b
-   Features: Uses Lombok annotations for automatic getters, setters, and constructors
+   #### Class: Nombres.java
+   #### Purpose: Data model containing two variables a and b
+   #### Features: Uses Lombok annotations for automatic getters, setters, and constructors
 ### 3. Package: service
-   Class: CalculService.java
-   Method: add(Nombres nombres)
-   Functionality: Business logic to calculate sum of two numbers
+   #### Class: CalculService.java
+   #### Method: add(Nombres nombres)
+   #### Functionality: Business logic to calculate sum of two numbers
 ### 4. Package: controller
-   Class: CalculController.java
-   Annotations:
-        @RestController: Indicates REST controller with automatic JSON conversion
-        @RequestMapping("/api/v1/calcul"): Defines base URL
-        @Autowired: Injects service dependency
-        @PostMapping("/somme"): Creates POST endpoint
+   #### Class: CalculController.java
+   #### Annotations:
+   ##### @RestController: Indicates REST controller with automatic JSON conversion
+   ##### @RequestMapping("/api/v1/calcul"): Defines base URL
+   ##### @Autowired: Injects service dependency
+   ##### @PostMapping("/somme"): Creates POST endpoint
 ### API Endpoint
    POST /api/v1/calcul/somme
