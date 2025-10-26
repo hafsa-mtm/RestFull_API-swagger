@@ -46,3 +46,23 @@
 ### API Endpoint
 
    POST /api/v1/calcul/somme
+### Testing with Postman
+
+<img width="897" height="431" alt="image" src="https://github.com/user-attachments/assets/d3ce544e-9356-4631-8f42-02081d240f4a" />
+
+## Project 2: BancService - Bank Account Management
+### Project Overview
+
+  Objective: Develop a microservice for bank account management with CRUD operations, credit, and debit functionality
+
+  Technology Stack: Spring Boot 3.5.7, Java 21, MySQL, Spring Data JPA, Lombok, Swagger
+Project Structure & Implementation
+
+### 1. Project Creation
+  Created Spring Boot project using Spring Initializr
+
+  Included dependencies: Spring Web, Spring Data JPA, MySQL, Lombok, SpringDoc OpenAPI
+
+### 2. Package: entities
+Class: Compte.java
+
