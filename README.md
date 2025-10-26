@@ -1,4 +1,3 @@
-<img width="945" height="420" alt="image" src="https://github.com/user-attachments/assets/83913942-3aa1-4a36-93c9-933f8f9dbf13" /># RestFull_API-swagger
 
 ## Project 1: SomeService - Simple Calculator API
 ### Project Overview
