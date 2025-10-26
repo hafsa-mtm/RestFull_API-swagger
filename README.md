@@ -95,13 +95,13 @@
   Endpoints: 7 REST endpoints with OpenAPI documentation
 
 ### API Endpoints
-  #### GET /api/comptes
+  1.GET /api/comptes
 
    Description: Get all bank accounts
 
    Response: List of all accounts with details
    
-  #### GET /api/comptes/{id}
+  2.GET /api/comptes/{id}
 
    Description: Get specific account by ID
 
@@ -109,7 +109,7 @@
 
    Response: Account details (id, nom, tel, solde)
 
-  #### POST /api/comptes
+  3. POST /api/comptes
 
    Description: Create a new bank account
 
@@ -117,7 +117,7 @@
 
    Response: Created account details with generated ID
 
-  #### PUT /api/comptes/{id}
+  4.PUT /api/comptes/{id}
 
    Description: Update an existing account
 
@@ -127,7 +127,7 @@
 
    Response: Updated account details
 
-  #### DELETE /api/comptes/{id}
+  5.DELETE /api/comptes/{id}
   
    Description: Delete a bank account
 
@@ -135,7 +135,7 @@
 
    Response: Success confirmation
 
-  #### PATCH /api/comptes/{id}/crediter
+  6. PATCH /api/comptes/{id}/crediter
 
    Description: Credit money to an account
 
@@ -143,7 +143,7 @@
 
    Response: Updated account balance
 
- #### PATCH /api/comptes/{id}/debiter
+ 7.PATCH /api/comptes/{id}/debiter
 
    Description: Debit money from an account
 
