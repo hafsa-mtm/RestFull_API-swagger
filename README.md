@@ -93,64 +93,7 @@
   Class: ApiRestful.java
 
   Endpoints: 7 REST endpoints with OpenAPI documentation
-
-### API Endpoints
-  1.GET /api/comptes
-
-   Description: Get all bank accounts
-
-   Response: List of all accounts with details
-   
-  2.GET /api/comptes/{id}
-
-   Description: Get specific account by ID
-
-   Parameters: Account ID as path variable
-
-   Response: Account details (id, nom, tel, solde)
-
-  3. POST /api/comptes
-
-   Description: Create a new bank account
-
-   Request Body: JSON with nom, tel, solde
-
-   Response: Created account details with generated ID
-
-  4.PUT /api/comptes/{id}
-
-   Description: Update an existing account
-
-   Parameters: Account ID as path variable
-
-   Request Body: JSON with updated nom, tel, solde
-
-   Response: Updated account details
-
-  5.DELETE /api/comptes/{id}
-  
-   Description: Delete a bank account
-
-   Parameters: Account ID as path variable
-
-   Response: Success confirmation
-
-  6. PATCH /api/comptes/{id}/crediter
-
-   Description: Credit money to an account
-
-   Parameters: Account ID as path variable, montant as request parameter
-
-   Response: Updated account balance
-
- 7.PATCH /api/comptes/{id}/debiter
-
-   Description: Debit money from an account
-
-   Parameters: Account ID as path variable, montant as request parameter
-
-   Response: Updated account balance
-
+ 
 ### Testing with Postman
 
 1. Get All Accounts
@@ -225,15 +168,27 @@
       Interface: FiliereRepository.java
 
       Features: Extends JpaRepository for automatic CRUD operations
+     
+  3.Package: dto
 
-  3. Package: service
+   Interface: FiliereResponseDTO.java
+
+   Feature: Data transfer object for API responses
+
+ 4.package:mapper
+  
+   interface: Filieremapper.java
+      
+   feature:Converts between Entity and DTO objects
+
+  5. Package: service
       Class: FiliereService.java
 
       Methods: save(), findAll(), update(), deleteById()
 
       Functionality: Business logic and data persistence
 
-  4. Package: controller
+  6. Package: controller
       Class: FiliereController.java
 
 #### Annotations: REST endpoints with Swagger documentation
@@ -296,59 +251,33 @@
 
   Features: Extends JpaRepository for automatic CRUD operations
 
-3. Package: service
+ 3.Package: dto
+
+   Interface: FiliereResponseDTO.java
+
+   Feature: Data transfer object for API responses
+
+ 4.package:mapper
+  
+   interface: Filieremapper.java
+      
+   feature:Converts between Entity and DTO objects
+
+5. Package: service
    Class: EtudiantService.java
 
    Functionality: Business logic for student management
 
-4. Package: config
+6. Package: config
    Class: RestConfig.java
 
    Bean: RestTemplate for HTTP communication between microservices
 
-5. Package: controller
+7. Package: controller
    Class: EtudiantController.java
 
    Features: REST endpoints with inter-service communication
 
-##### EtudiantService API Endpoints
-  1.GET /api/v1/etudiants
-
-   Description: Get all students
-
-   Response: List of all students with details
-
-  2.GET /api/v1/etudiants/{id}
-
-   Description: Get specific student by ID
-
-   Parameters: Student ID as path variable
-
-   Response: Student details with filiere information
-
-  3.POST /api/v1/etudiants
-
-   Description: Create a new student
-
-  Request Body: JSON with nom, prenom, cne, filiereId
-
-  Response: Created student details with generated ID
-
- 4.PUT /api/v1/etudiants
-
-  Description: Update an existing student
-
-  Request Body: JSON with updated student information
-
-  Response: Updated student details
-
-5.DELETE /api/v1/etudiants/{id}
-
-  Description: Delete a student
- 
-  Parameters: Student ID as path variable
-
-  Response: Success confirmation
 
 ##### Testing with Postman
 
