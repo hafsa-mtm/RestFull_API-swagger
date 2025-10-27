@@ -1,6 +1,7 @@
 package com.example.filiereservice.controller;
 
-import com.example.filiereservice.entities.Filiere;
+import com.example.filiereservice.dto.FiliereRequestDTO;
+import com.example.filiereservice.dto.FiliereResponseDTO;
 import com.example.filiereservice.service.FiliereService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -8,6 +9,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +26,9 @@ public class FiliereController {
     @GetMapping
     @Operation(summary = "Get all filieres", description = "Retrieve a list of all academic programs")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved list of filieres")
-    public List<Filiere> getAllFilieres() {
-        return filiereService.getAllFilieres();
+    public ResponseEntity<List<FiliereResponseDTO>> getAllFilieres() {
+        List<FiliereResponseDTO> filieres = filiereService.getAllFilieres();
+        return ResponseEntity.ok(filieres);
     }
 
     @GetMapping("/{id}")
@@ -33,19 +37,21 @@ public class FiliereController {
             @ApiResponse(responseCode = "200", description = "Filiere found"),
             @ApiResponse(responseCode = "404", description = "Filiere not found")
     })
-    public Filiere getFiliereById(
+    public ResponseEntity<FiliereResponseDTO> getFiliereById(
             @Parameter(description = "ID of the filiere to retrieve", example = "1")
             @PathVariable int id) {
-        return filiereService.getFiliereById(id);
+        FiliereResponseDTO filiere = filiereService.getFiliereById(id);
+        return filiere != null ? ResponseEntity.ok(filiere) : ResponseEntity.notFound().build();
     }
 
     @PostMapping
     @Operation(summary = "Create a new filiere", description = "Add a new academic program to the system")
-    @ApiResponse(responseCode = "200", description = "Filiere created successfully")
-    public Filiere addFiliere(
-            @Parameter(description = "Filiere object to create")
-            @RequestBody Filiere filiere) {
-        return filiereService.addFiliere(filiere);
+    @ApiResponse(responseCode = "201", description = "Filiere created successfully")
+    public ResponseEntity<FiliereResponseDTO> addFiliere(
+            @Parameter(description = "Filiere data to create")
+            @RequestBody FiliereRequestDTO filiereRequestDTO) {
+        FiliereResponseDTO createdFiliere = filiereService.addFiliere(filiereRequestDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdFiliere);
     }
 
     @PutMapping("/{id}")
@@ -54,24 +60,25 @@ public class FiliereController {
             @ApiResponse(responseCode = "200", description = "Filiere updated successfully"),
             @ApiResponse(responseCode = "404", description = "Filiere not found")
     })
-    public Filiere updateFiliere(
+    public ResponseEntity<FiliereResponseDTO> updateFiliere(
             @Parameter(description = "ID of the filiere to update", example = "1")
             @PathVariable int id,
-            @Parameter(description = "Updated filiere object")
-            @RequestBody Filiere filiere) {
-        filiere.setIdFiliere(id);
-        return filiereService.updateFiliere(filiere);
+            @Parameter(description = "Updated filiere data")
+            @RequestBody FiliereRequestDTO filiereRequestDTO) {
+        FiliereResponseDTO updatedFiliere = filiereService.updateFiliere(id, filiereRequestDTO);
+        return updatedFiliere != null ? ResponseEntity.ok(updatedFiliere) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete a filiere", description = "Remove an academic program from the system")
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Filiere deleted successfully"),
+            @ApiResponse(responseCode = "204", description = "Filiere deleted successfully"),
             @ApiResponse(responseCode = "404", description = "Filiere not found")
     })
-    public void deleteFiliere(
+    public ResponseEntity<Void> deleteFiliere(
             @Parameter(description = "ID of the filiere to delete", example = "1")
             @PathVariable int id) {
         filiereService.deleteFiliere(id);
+        return ResponseEntity.noContent().build();
     }
 }
