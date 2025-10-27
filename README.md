@@ -157,7 +157,7 @@
 
   ##### Project Structure & Implementation
   
-   1. Package: entities
+  1. Package: entities
       Class: Filiere.java
   
       Fields: idFiliere, code, libelle
@@ -168,72 +168,30 @@
       Interface: FiliereRepository.java
 
       Features: Extends JpaRepository for automatic CRUD operations
-     
+
   3.Package: dto
 
    Interface: FiliereResponseDTO.java
 
    Feature: Data transfer object for API responses
 
- 4.package:mapper
+  4.package:mapper
   
    interface: Filieremapper.java
       
    feature:Converts between Entity and DTO objects
 
   5. Package: service
-      Class: FiliereService.java
+     
+   Class: FiliereService.java
 
-      Methods: save(), findAll(), update(), deleteById()
+   Methods: save(), findAll(), update(), deleteById()
 
-      Functionality: Business logic and data persistence
+   Functionality: Business logic and data persistence
 
   6. Package: controller
-      Class: FiliereController.java
-
-#### Annotations: REST endpoints with Swagger documentation
-
-  ##### FiliereService API Endpoints
-
-  1.GET /api/v1/filieres
-
-   Description: Get all academic programs
-
-   Response: List of all filieres with details
-
-  2.GET /api/v1/filieres/{id}
-
-   Description: Get specific filiere by ID
-
-   Parameters: Filiere ID as path variable
-
-   Response: Filiere details (idFiliere, code, libelle)
-
-  3.POST /api/v1/filieres
-
-   Description: Create a new academic program
-
-   Request Body: JSON with code and libelle
-
-   Response: Created filiere details with generated ID
-
-  4.PUT /api/v1/filieres/{id}
-
-   Description: Update an existing filiere
-
-   Parameters: Filiere ID as path variable
-
-   Request Body: JSON with updated code and libelle
-
-   Response: Updated filiere details
-
- 5.DELETE /api/v1/filieres/{id}
-
-   Description: Delete an academic program
-
-   Parameters: Filiere ID as path variable
-
-   Response: Success confirmation
+   
+   Class: FiliereController.java
 
 #### Microservice 2: EtudiantService
  #### Project Structure & Implementation
@@ -247,37 +205,40 @@
    Annotations: JPA @Entity, @Id with relationship mapping
 
 2. Package: repository
-  Interface: EtudiantRepository.java
+   
+   Interface: EtudiantRepository.java
 
-  Features: Extends JpaRepository for automatic CRUD operations
+   Features: Extends JpaRepository for automatic CRUD operations
 
- 3.Package: dto
+3.Package: dto
 
    Interface: FiliereResponseDTO.java
 
    Feature: Data transfer object for API responses
 
- 4.package:mapper
+4.package:mapper
   
    interface: Filieremapper.java
       
    feature:Converts between Entity and DTO objects
 
 5. Package: service
+
    Class: EtudiantService.java
 
    Functionality: Business logic for student management
 
-6. Package: config
+7. Package: config
+
    Class: RestConfig.java
 
    Bean: RestTemplate for HTTP communication between microservices
 
-7. Package: controller
+9. Package: controller
+
    Class: EtudiantController.java
 
    Features: REST endpoints with inter-service communication
-
 
 ##### Testing with Postman
 
