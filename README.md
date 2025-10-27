@@ -154,8 +154,6 @@
   Technology Stack: Spring Boot 3.5.7, Java 21, MySQL, Spring Data JPA, RestTemplate, Lombok, Swagger
 
 #### Microservice 1: FiliereService
-
-  #### Project Structure & Implementation
   
 #### 1. Package: entities    	
   Class: Filiere.java
@@ -186,7 +184,6 @@
   Class: FiliereController.java
 
 #### Microservice 2: EtudiantService
- #### Project Structure & Implementation
  
 #### 1. Package: entities
   Class: Etudiant.java
