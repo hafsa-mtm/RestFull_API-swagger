@@ -169,9 +169,7 @@
 
       Features: Extends JpaRepository for automatic CRUD operations
 
-  3.Package: dto
-      Interface: FiliereResponseDTO.java
-      
+  3.Package: dto      
       Feature: Data transfer object for API responses
 
   4.package:mapper      
@@ -190,7 +188,7 @@
 #### Microservice 2: EtudiantService
  #### Project Structure & Implementation
  
-  1. Package: entities
+1. Package: entities
    Class: Etudiant.java
 
    Fields: idEtudiant, nom, prenom, cne, filiereId
