@@ -157,73 +157,73 @@
 
   #### Project Structure & Implementation
   
-  1. Package: entities
-      Class: Filiere.java
+#### 1. Package: entities    	
+  Class: Filiere.java
   
-      Fields: idFiliere, code, libelle
+  Fields: idFiliere, code, libelle
 
-      Annotations: JPA @Entity, @Id for database mapping
+  Annotations: JPA @Entity, @Id for database mapping
   
-  3. Package: repository
-      Interface: FiliereRepository.java
+#### 3. Package: repository
+  Interface: FiliereRepository.java
 
-      Features: Extends JpaRepository for automatic CRUD operations
+  Features: Extends JpaRepository for automatic CRUD operations
 
-  3.Package: dto      
-      Feature: Data transfer object for API responses
+#### 3.Package: dto      
+  Feature: Data transfer object for API responses
 
-  4.package:mapper      
-      feature:Converts between Entity and DTO objects
+#### 4.package:mapper      
+  feature:Converts between Entity and DTO objects
 
-  5. Package: service
-      Class: FiliereService.java
+#### 5. Package: service
+  Class: FiliereService.java
   
-      Methods: save(), findAll(), update(), deleteById()
+  Methods: save(), findAll(), update(), deleteById()
 
-      Functionality: Business logic and data persistence
+  Functionality: Business logic and data persistence
 
-  6. Package: controller
-      Class: FiliereController.java
+#### 6. Package: controller
+  Class: FiliereController.java
 
 #### Microservice 2: EtudiantService
  #### Project Structure & Implementation
  
-1. Package: entities
-   Class: Etudiant.java
+#### 1. Package: entities
+  Class: Etudiant.java
 
-   Fields: idEtudiant, nom, prenom, cne, filiereId
+  Fields: idEtudiant, nom, prenom, cne, filiereId
 
-   Annotations: JPA @Entity, @Id with relationship mapping
+  Annotations: JPA @Entity, @Id with relationship mapping
 
-2. Package: repository
-   Interface: EtudiantRepository.java
+#### 2. Package: repository
+  Interface: EtudiantRepository.java
 
-   Features: Extends JpaRepository for automatic CRUD operations
+  Features: Extends JpaRepository for automatic CRUD operations
 
-3.Package: dto
-   Interface: FiliereResponseDTO.java
+#### 3.Package: dto
+  Interface: FiliereResponseDTO.java
 
-   Feature: Data transfer object for API responses
+  Feature: Data transfer object for API responses
 
-4.package:mapper
-   interface: Filieremapper.java
+#### 4.package:mapper
+  interface: Filieremapper.java
       
-   feature:Converts between Entity and DTO objects
+  feature:Converts between Entity and DTO objects
 
-5. Package: service
-   Class: EtudiantService.java
+#### 5. Package: service
+  Class: EtudiantService.java
 
-   Functionality: Business logic for student management
+  Functionality: Business logic for student management
 
-7. Package: config
-   Class: RestConfig.java
+#### 7. Package: config
+  Class: RestConfig.java
 
-   Bean: RestTemplate for HTTP communication between microservices
+  Bean: RestTemplate for HTTP communication between microservices
 
-9. Package: controller
-   Class: EtudiantController.java
+#### 9. Package: controller
+  Class: EtudiantController.java
 
-   Features: REST endpoints with inter-service communication
+  Features: REST endpoints with inter-service communication
 
 #### Testing with Postman
 
